@@ -1,25 +1,45 @@
 <html>
-<head>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <div class="container">
-        
-    <div class="msg">
-        <%= typeof msg != 'undefined' ? msg : '' %>
-    </div>
-    <div class="form">
+      <div class="msg">al <%= typeof msg != 'undefined' ? msg : '' %></div>
+      <div class="form">
         <form action="/userSubmit" method="post">
-            <h2>Login</h2>
-        <div class="input-field">
-            <input type="text" name="email" id="email" placeholder="Enter email">
-        </div>
-        <div class="input-field">
-            <input type="password" name="password" id="password" placeholder="Enter Password">
-        </div>
-        <input type="submit" value="Login">
-    </form>
-</div>
-</div>
+          <h2>Login</h2>
+          <div class="input-field">
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="input-field">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+            />
+          </div>
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
+    <script>
+        var error = msg;          
+        
+        if(typeof msg!='undefined') 
+        {  
+          showAlert(error.message);
+        }
+        
+        
+        showAlert = function(err) {
+          alert('error: ' + err);
+        }
+        </script>  
 </body>
 </html>
